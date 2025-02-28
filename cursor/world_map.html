@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map Animation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #start {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #start:hover {
+            background-color: #1976D2;
+        }
+
+        #mapContainer {
+            width: 1200px;
+            height: 600px;
+            background-color: #e6f3ff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .continent {
+            fill: #4CAF50;
+            stroke: #fff;
+            stroke-width: 0.5;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .continent.visible {
+            opacity: 1;
+        }
+
+        text {
+            font-size: 14px;
+            fill: #333;
+            text-anchor: middle;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        text.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">Start</button>
+    <div id="mapContainer">
+        <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+            <!-- Asia -->
+            <path class="continent" id="asia" d="M825,89 L851,82 L875,91 L893,87 L901,93 L925,93 L946,85 L957,90 L971,87 L978,91 L986,85 L1007,85 L1017,80 L1027,82 L1033,77 L1045,78 L1051,73 L1066,73 L1076,67 L1076,60 L1085,54 L1087,45 L1080,40 L1080,31 L1087,27 L1082,20 L1071,16 L1066,8 L1056,8 L1045,15 L1031,13 L1020,17 L1012,14 L1001,19 L989,14 L978,16 L970,24 L959,24 L952,29 L935,27 L928,31 L913,27 L901,31 L894,27 L880,29 L870,37 L857,35 L848,39 L834,39 L824,44 L816,43 L807,47 L797,46 L786,52 L775,49 L766,52 L759,51 L751,56 L742,56 L733,61 L723,60 L714,64 L705,62 L697,66 L688,65 L680,69 L672,67 L663,71 L655,70 L646,74 L638,73 L630,77 L622,75 L613,79 L605,78 L597,82 L589,81 L582,85 L574,83 L566,87 L558,86 L551,90 L544,89 L536,93 L529,91 L522,95 L514,94 L507,98 L500,97 L493,101 L486,99 L479,103 L472,102 L465,106 L458,104 L452,108 L445,107 L438,111 L432,110 L425,114 L419,112 L413,116 L407,115 L401,119 L395,117 L389,121 L383,120 L377,124 L371,123 L366,127 L360,125 L355,129 L349,128 L344,132 L339,131 L334,135 L329,133 L324,137 L319,136 L315,140 L310,139 L306,143 L301,141 L297,145 L293,144 L289,148 L285,147 L281,151 L277,149 L274,153 L270,152 L267,156 L263,155 L260,159 L257,157 L254,161 L251,160 L248,164 L245,163 L243,167 L240,165 L238,169 L235,168 L233,172 L231,171 L229,175 L227,173 L225,177 L223,176 L222,180 L220,178 L219,182 L217,181 L216,185 L215,183 L214,187 L213,186 L212,190 L211,188 L211,192 L210,191 L210,195 L209,193 L209,197 L209,196 L209,200 L209,198 L210,202 L210,201 L211,205 L211,203 L212,207 L213,206 L214,210 L215,208 L216,212 L217,211 L219,215 L220,213 L222,217 L223,216 L225,220 L227,218 L229,222 L231,221 L233,225 L235,223 L238,227 L240,226 L243,230 L245,228 L248,232 L251,231 L254,235 L257,234 L260,238 L263,236 L267,240 L270,239 L274,243 L277,242 L281,246 L285,244 L289,248 L293,247 L297,251 L301,250 L306,254 L310,252 L315,256 L319,255 L324,259 L329,258 L334,262 L339,260 L344,264 L349,263 L355,267 L360,266 L366,270 L371,268 L377,272 L383,271 L389,275 L395,274 L401,278 L407,276 L413,280 L419,279 L425,283 L432,282 L438,286 L445,284 L452,288 L458,287 L465,291 L472,290 L479,294 L486,292 L493,296 L500,295 L507,299 L514,298 L522,302 L529,300 L536,304 L544,303 L551,307 L558,306 L566,310 L574,308 L582,312 L589,311 L597,315 L605,314 L613,318 L622,316 L630,320 L638,319 L646,323 L655,322 L663,326 L672,324 L680,328 L688,327 L697,331 L705,330 L714,334 L723,332 L733,336 L742,335 L751,339 L759,338 L766,342 L775,340 L786,344 L797,343 L807,347 L816,346 L824,350 L834,348 L848,352 L857,351 L870,355 L880,354 L894,358 L901,356 L913,360 L928,359 L935,363 L952,362 L959,366 L970,364 L978,368 L989,367 L1001,371 L1012,369 L1020,373 L1031,372 L1045,376 L1056,374 L1066,378 L1071,377 L1082,381 L1087,379 L1080,375 L1080,366 L1087,362 L1085,353 L1076,347 L1076,340 L1066,334 L1051,334 L1045,329 L1033,329 L1027,324 L1017,324 L1007,319 L986,319 L978,314 L971,314 L957,309 L946,309 L925,304 L901,304 L893,299 L875,299 L851,294 L825,294 Z"/>
+            <text x="900" y="200" id="asia-text">Asia (44.5 million km²)</text>
+
+            <!-- Africa -->
+            <path class="continent" id="africa" d="M580,180 L590,180 L600,190 L610,200 L620,210 L630,220 L640,230 L650,240 L660,250 L670,260 L680,270 L690,280 L700,290 L710,300 L720,310 L730,320 L740,330 L750,340 L760,350 L770,360 L780,370 L790,380 L800,390 L810,400 L820,410 L830,420 L840,430 L850,440 L860,450 L870,460 L880,470 L890,480 L900,490 L910,500 L920,510 L930,520 L940,530 L950,540 L960,550 L970,560 L980,570 L990,580 L1000,590 L990,590 L980,580 L970,570 L960,560 L950,550 L940,540 L930,530 L920,520 L910,510 L900,500 L890,490 L880,480 L870,470 L860,460 L850,450 L840,440 L830,430 L820,420 L810,410 L800,400 L790,390 L780,380 L770,370 L760,360 L750,350 L740,340 L730,330 L720,320 L710,310 L700,300 L690,290 L680,280 L670,270 L660,260 L650,250 L640,240 L630,230 L620,220 L610,210 L600,200 L590,190 L580,180 Z"/>
+            <text x="780" y="380" id="africa-text">Africa (30.4 million km²)</text>
+
+            <!-- North America -->
+            <path class="continent" id="northAmerica" d="M180,50 L200,45 L220,42 L240,40 L260,39 L280,40 L300,42 L320,45 L340,50 L360,56 L380,64 L400,73 L420,84 L440,96 L460,110 L480,125 L500,142 L520,160 L540,180 L560,201 L580,224 L600,248 L620,274 L640,301 L660,330 L680,360 L700,392 L720,425 L740,460 L760,496 L780,534 L800,573 L820,614 L840,656 L860,700 L880,745 L900,792 L920,840 L940,890 L960,941 L980,994 L1000,1048 L980,994 L960,941 L940,890 L920,840 L900,792 L880,745 L860,700 L840,656 L820,614 L800,573 L780,534 L760,496 L740,460 L720,425 L700,392 L680,360 L660,330 L640,301 L620,274 L600,248 L580,224 L560,201 L540,180 L520,160 L500,142 L480,125 L460,110 L440,96 L420,84 L400,73 L380,64 L360,56 L340,50 L320,45 L300,42 L280,40 L260,39 L240,40 L220,42 L200,45 L180,50 Z"/>
+            <text x="580" y="300" id="na-text">North America (24.7 million km²)</text>
+
+            <!-- South America -->
+            <path class="continent" id="southAmerica" d="M300,300 L320,310 L340,320 L360,330 L380,340 L400,350 L420,360 L440,370 L460,380 L480,390 L500,400 L520,410 L540,420 L560,430 L580,440 L600,450 L620,460 L640,470 L660,480 L680,490 L700,500 L680,490 L660,480 L640,470 L620,460 L600,450 L580,440 L560,430 L540,420 L520,410 L500,400 L480,390 L460,380 L440,370 L420,360 L400,350 L380,340 L360,330 L340,320 L320,310 L300,300 Z"/>
+            <text x="500" y="400" id="sa-text">South America (17.8 million km²)</text>
+
+            <!-- Antarctica -->
+            <path class="continent" id="antarctica" d="M200,500 L220,505 L240,510 L260,515 L280,520 L300,525 L320,530 L340,535 L360,540 L380,545 L400,550 L420,555 L440,560 L460,565 L480,570 L500,575 L520,580 L540,585 L560,590 L580,595 L600,600 L580,595 L560,590 L540,585 L520,580 L500,575 L480,570 L460,565 L440,560 L420,555 L400,550 L380,545 L360,540 L340,535 L320,530 L300,525 L280,520 L260,515 L240,510 L220,505 L200,500 Z"/>
+            <text x="400" y="550" id="antarctica-text">Antarctica (14.2 million km²)</text>
+
+            <!-- Europe -->
+            <path class="continent" id="europe" d="M600,100 L620,98 L640,97 L660,97 L680,98 L700,100 L720,103 L740,107 L760,112 L780,118 L800,125 L820,133 L840,142 L860,152 L880,163 L900,175 L920,188 L940,202 L960,217 L980,233 L1000,250 L980,233 L960,217 L940,202 L920,188 L900,175 L880,163 L860,152 L840,142 L820,133 L800,125 L780,118 L760,112 L740,107 L720,103 L700,100 L680,98 L660,97 L640,97 L620,98 L600,100 Z"/>
+            <text x="800" y="150" id="europe-text">Europe (10.2 million km²)</text>
+
+            <!-- Australia -->
+            <path class="continent" id="australia" d="M900,400 L910,402 L920,405 L930,409 L940,414 L950,420 L960,427 L970,435 L980,444 L990,454 L1000,465 L990,454 L980,444 L970,435 L960,427 L950,420 L940,414 L930,409 L920,405 L910,402 L900,400 Z"/>
+            <text x="950" y="430" id="australia-text">Australia (7.7 million km²)</text>
+        </svg>
+    </div>
+
+    <script>
+        const continents = [
+            { id: 'asia', name: 'Asia', size: 44.5 },
+            { id: 'africa', name: 'Africa', size: 30.4 },
+            { id: 'northAmerica', name: 'North America', size: 24.7 },
+            { id: 'southAmerica', name: 'South America', size: 17.8 },
+            { id: 'antarctica', name: 'Antarctica', size: 14.2 },
+            { id: 'europe', name: 'Europe', size: 10.2 },
+            { id: 'australia', name: 'Australia', size: 7.7 }
+        ].sort((a, b) => b.size - a.size);
+
+        document.getElementById('start').addEventListener('click', function() {
+            // Reset all continents
+            document.querySelectorAll('.continent, text').forEach(el => {
+                el.classList.remove('visible');
+            });
+
+            // Animate continents in order of size
+            continents.forEach((continent, index) => {
+                setTimeout(() => {
+                    document.getElementById(continent.id).classList.add('visible');
+                    document.getElementById(`${continent.id}-text`).classList.add('visible');
+                }, index * 1000);
+            });
+        });
+    </script>
+</body>
+</html> 

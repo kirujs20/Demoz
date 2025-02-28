@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 5 Epic Gameplay Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff3019 0%, #c90000 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .video-card {
+            background: #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255,48,25,0.2);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1rem;
+            background: linear-gradient(180deg, #2a2a2a 0%, #222 100%);
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .video-description {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GTA 5 Most Viewed</h1>
+        <div class="subtitle">Top Videos Ranked by Views</div>
+    </header>
+
+    <div class="container">
+        <div class="video-grid">
+            <!-- Video 1 (150M+ views) -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/N-xHcvug3WI?enablejsapi=1&rel=0&modestbranding=1&controls=1" 
+                        title="GTA 5 Official Trailer" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">GTA 5 Official Trailer (150M+ Views)</div>
+                    <div class="video-description">The legendary Grand Theft Auto V announcement trailer</div>
+                </div>
+            </div>
+
+            <!-- Video 2 (100M+ views) -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/hvoD7ehZPcM?enablejsapi=1&rel=0&modestbranding=1&controls=1" 
+                        title="GTA 5 Gameplay" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">GTA 5 Official Gameplay Video (100M+ Views)</div>
+                    <div class="video-description">Rockstar's iconic gameplay introduction video</div>
+                </div>
+            </div>
+
+            <!-- Video 3 (80M+ views) -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/QkkoHAzjnUs?enablejsapi=1&rel=0&modestbranding=1&controls=1" 
+                        title="GTA 5 PC Trailer" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">GTA 5 PC Trailer (80M+ Views)</div>
+                    <div class="video-description">The stunning PC version announcement trailer</div>
+                </div>
+            </div>
+
+            <!-- Video 4 (70M+ views) -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/VjZ5tgjPVfU?enablejsapi=1&rel=0&modestbranding=1&controls=1" 
+                        title="GTA Online Heists" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">GTA Online Heists Trailer (70M+ Views)</div>
+                    <div class="video-description">The most viewed GTA Online content update</div>
+                </div>
+            </div>
+
+            <!-- Video 5 (60M+ views) -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Ag_JIT0bl_8?enablejsapi=1&rel=0&modestbranding=1&controls=1" 
+                        title="GTA 5 Franklin" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Franklin Character Trailer (60M+ Views)</div>
+                    <div class="video-description">Meet Franklin: One of GTA 5's three protagonists</div>
+                </div>
+            </div>
+
+            <!-- Video 6 (50M+ views) -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/3DBrG2YjqQA?enablejsapi=1&rel=0&modestbranding=1&controls=1" 
+                        title="GTA 5 Michael" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Michael Trailer (50M+ Views)</div>
+                    <div class="video-description">The introduction of Michael De Santa</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add this script to ensure videos play in the page
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // This function will be called when the YouTube API is ready
+        function onYouTubeIframeAPIReady() {
+            // Initialize all video players
+            document.querySelectorAll('.video-container iframe').forEach((iframe, index) => {
+                new YT.Player(iframe, {
+                    events: {
+                        'onStateChange': function(event) {
+                            // Prevent video from redirecting to YouTube when finished
+                            if (event.data === YT.PlayerState.ENDED) {
+                                event.target.stopVideo();
+                            }
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html> 
